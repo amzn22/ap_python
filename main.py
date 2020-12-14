@@ -3,6 +3,7 @@ import sys
 import itertools
 
 import pycode_similar
+from Start.start_methods import start_methods
 
 
 def main():
@@ -44,4 +45,19 @@ def main():
             print(f'НАЙДЕН ПЛАГИАТ. Проекты "{project1}" и "{project2}" схожи на {plagiarism * 100}%!')
 
 
+# Проверка с помощью библиотеки pycode_similar
+print("Началась проверка с помощью библиотеки pycode_similar")
+print()
 main()
+print()
+print("Закончилась проверка с помощью библиотеки pycode_similar")
+
+print()
+print()
+
+# Проверка с помощью алгоритмов из папки Start
+print("Началась проверка с помощью алгоритмов из папки Start")
+print()
+start_methods()
+print()
+print("Закончилась проверка с помощью алгоритмов из папки Start")
