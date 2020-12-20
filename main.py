@@ -48,7 +48,7 @@ def main():
 # Проверка с помощью библиотеки pycode_similar
 print("Началась проверка с помощью библиотеки pycode_similar")
 print()
-main()
+# main()
 print()
 print("Закончилась проверка с помощью библиотеки pycode_similar")
 

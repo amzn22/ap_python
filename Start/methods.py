@@ -96,14 +96,14 @@ def file_sorting(file_name):
         else:
             new_sorted_lines.append(line)
 
-    return sorted_lines
+    return new_sorted_lines
 
 
 # Подсчет на плагиат
 def counting(sorted_file_1, sorted_file_2):
     k = 0
-    file_1 = sorted_file_1
-    file_2 = sorted_file_2
+    file_1 = sorted_file_1.copy()
+    file_2 = sorted_file_2.copy()
 
     for i in range(len(file_1)):
         for j in range(len(file_2)):
@@ -118,3 +118,18 @@ def counting(sorted_file_1, sorted_file_2):
         q = len(sorted_file_1)
 
     return k / q
+
+
+# example
+file = open("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py")
+lines = file.read().splitlines()
+file.close()
+for i in lines:
+    print(i)
+
+print()
+print()
+print()
+
+for j in file_sorting("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py"):
+    print(j)
