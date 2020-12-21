@@ -120,16 +120,16 @@ def counting(sorted_file_1, sorted_file_2):
     return k / q
 
 
-# example
-file = open("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py")
-lines = file.read().splitlines()
-file.close()
-for i in lines:
-    print(i)
-
-print()
-print()
-print()
-
-for j in file_sorting("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py"):
-    print(j)
+# EXAMPLE
+# file = open("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py")
+# lines = file.read().splitlines()
+# file.close()
+# for i in lines:
+#     print(i)
+#
+# print()
+# print()
+# print()
+#
+# for j in file_sorting("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py"):
+#     print(j)
