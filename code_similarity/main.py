@@ -3,18 +3,7 @@ import itertools
 from .methods import *
 
 
-def start_methods():
-    # print()
-    # print()
-    # print()
-
-    # Получения списков проектов
-    main_directory = os.getcwd()
-    main_directory = main_directory + "\\Projects"
-    projects = os.listdir(path=main_directory)
-
-    for i in range(len(projects)):
-        projects[i] = main_directory + "\\" + projects[i]
+def start_methods(projects):
 
     # Поиск всех файлов и их запись в словарь
     projects_files = {}
@@ -49,7 +38,7 @@ def start_methods():
                 result_from_files = counting(sorted_file_1, sorted_file_2)
 
                 results_sum += result_from_files
-                print("Процент плагиата между файлами {} равен: {}".format(key, result_from_files))
+                print(f"Процент плагиата между файлами {key} равен: {result_from_files}")
                 print("----------------------------------------------------------")
 
         # Итоговый процент плагиата
@@ -58,6 +47,6 @@ def start_methods():
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         print()
         print()
-        print("Общий процент плагиата между проетами {} и {}: {} %".format(project_1, project_2, main_result))
+        print(f"Общий процент плагиата между проетами {project_1} и {project_2}: {main_result} %")
 
 

@@ -3,7 +3,7 @@ import sys
 import itertools
 
 import pycode_similar
-from Start.start_methods import start_methods
+from code_similarity.main import start_methods
 
 
 def main():
@@ -35,11 +35,10 @@ def main():
                 for difference in differences_list:
                     total_lines += difference.total_count
                     plagiarised_lines += difference.plagiarism_count
-                
+
                 if plagiarised_lines / total_lines > 0.7:
                     plagiarised_files.append(file)
-        
-        
+
         plagiarism = len(plagiarised_files) / min(len(projects_files[project1]), len(projects_files[project2]))
         if plagiarism > 0.7:
             print(f'НАЙДЕН ПЛАГИАТ. Проекты "{project1}" и "{project2}" схожи на {plagiarism * 100}%!')
@@ -47,17 +46,10 @@ def main():
 
 # Проверка с помощью библиотеки pycode_similar
 print("Началась проверка с помощью библиотеки pycode_similar")
-print()
-# main()
-print()
+main()
 print("Закончилась проверка с помощью библиотеки pycode_similar")
-
 print()
-print()
-
-# Проверка с помощью алгоритмов из папки Start
-print("Началась проверка с помощью алгоритмов из папки Start")
-print()
-start_methods()
-print()
-print("Закончилась проверка с помощью алгоритмов из папки Start")
+# Проверка с помощью собственных алгоритмов
+print("Началась проверка с помощью собственных алгоритмов")
+start_methods(projects=sys.argv[1:])
+print("Закончилась проверка с помощью собственных алгоритмов")

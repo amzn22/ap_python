@@ -1,4 +1,3 @@
-
 def operator_deletion(operator, sorted_lines):
     # Удаления из оператора всех символов, кроме букв, цифр и нижнего подчеркивания
     sorted_operator = ""
@@ -16,12 +15,15 @@ def operator_deletion(operator, sorted_lines):
             u = n + len(sorted_operator)
             if n == -1:
                 flag = False
-            elif n == 0 and (line[n + len(sorted_operator)].isalnum() or line[n + len(sorted_operator)] == "_") is False:
+            elif n == 0 and (
+                    line[n + len(sorted_operator)].isalnum() or line[n + len(sorted_operator)] == "_") is False:
                 line = "OPR{}".format(line[(n + len(sorted_operator)):])
             elif n + len(sorted_operator) - 1 < len(line) - 1:
-                if ((line[n - 1].isalnum() or line[n - 1] == "_") or (line[n + len(sorted_operator)].isalnum() or line[n + len(sorted_operator)] == "_")) is False:
+                if ((line[n - 1].isalnum() or line[n - 1] == "_") or (
+                        line[n + len(sorted_operator)].isalnum() or line[n + len(sorted_operator)] == "_")) is False:
                     line = "{}OPR{}".format(line[:n], line[(n + len(sorted_operator)):])
-            elif n + len(sorted_operator) - 1 == len(line) - 1 and (line[n - 1].isalnum() or line[n - 1] == "_") is False:
+            elif n + len(sorted_operator) - 1 == len(line) - 1 and (
+                    line[n - 1].isalnum() or line[n - 1] == "_") is False:
                 line = "{}OPR".format(line[:n])
         sorted_lines[i] = line
     return sorted_lines
@@ -118,7 +120,6 @@ def counting(sorted_file_1, sorted_file_2):
         q = len(sorted_file_1)
 
     return k / q
-
 
 # EXAMPLE
 # file = open("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py")
