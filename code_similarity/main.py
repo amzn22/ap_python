@@ -4,8 +4,6 @@ from .methods import *
 
 
 def start_methods(projects):
-
-    # Поиск всех файлов и их запись в словарь
     projects_files = {}
     files_count = 0
     for project in projects:
@@ -25,7 +23,6 @@ def start_methods(projects):
     print()
     print()
 
-    # Подсчет плагиата между файлами
     results_sum = 0
     for project_1, project_2 in itertools.combinations(projects, 2):
         for key in projects_files[project_1]:
@@ -41,7 +38,6 @@ def start_methods(projects):
                 print(f"Процент плагиата между файлами {key} равен: {result_from_files}")
                 print("----------------------------------------------------------")
 
-        # Итоговый процент плагиата
         main_result = (results_sum / (files_count / 2)) * 100
 
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
