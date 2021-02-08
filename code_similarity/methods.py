@@ -32,7 +32,6 @@ def file_sorting(file_name):
     lines = file.read().splitlines()
     file.close()
 
-
     new_lines = []
     for line in lines:
         if line == '':
@@ -45,7 +44,6 @@ def file_sorting(file_name):
             new_lines.append(line)
 
     sorted_lines = new_lines
-
 
     for line in new_lines:
         for i in range(len(line)):
@@ -75,12 +73,10 @@ def file_sorting(file_name):
                                 sorted_lines = operator_deletion(param, sorted_lines)
                                 break
 
-
     for l in range(len(sorted_lines)):
         line = sorted_lines[l]
         line = line.replace(" ", "")
         sorted_lines[l] = line
-
 
     for l in range(len(sorted_lines)):
         line = sorted_lines[l]
