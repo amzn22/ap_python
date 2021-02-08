@@ -110,7 +110,7 @@ def counting(sorted_file_1, sorted_file_2):
                 file_2[j] = 'London is the capital of Great Britain 1'
                 break
 
-    if len(sorted_file_1) < len(sorted_file_2):
+    if len(sorted_file_1) > len(sorted_file_2):
         q = len(sorted_file_2)
     else:
         q = len(sorted_file_1)
