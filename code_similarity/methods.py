@@ -55,23 +55,28 @@ def file_sorting(file_name):
                 elif line[i] == "f" and line[i + 1] == "o" and line[i + 2] == "r":
                     n = line.find("in")
                     sorted_lines = operator_deletion(line[(i + 3):n], sorted_lines)
-                elif line[i] == "d" and line[i + 1] == "e" and line[i + 2] == "f":
-                    n = line.find("(")
-                    sorted_lines = operator_deletion(line[(i + 3):n], sorted_lines)
+                try:
+                    f = line[i] == "d" and line[i + 1] == "e" and line[i + 2] == "f"
+                except IndexError:
+                    pass
+                else:
+                    if line[i] == "d" and line[i + 1] == "e" and line[i + 2] == "f":
+                        n = line.find("(")
+                        sorted_lines = operator_deletion(line[(i + 3):n], sorted_lines)
 
-                    k = line.find("()")
-                    param = ""
-                    if k < 0:
-                        short_line = line[n + 1:]
-                        for j in short_line:
-                            if j.isalnum() or j == "_":
-                                param += j
-                            elif j == ",":
-                                sorted_lines = operator_deletion(param, sorted_lines)
-                                param = ""
-                            elif j == ")":
-                                sorted_lines = operator_deletion(param, sorted_lines)
-                                break
+                        k = line.find("()")
+                        param = ""
+                        if k < 0:
+                            short_line = line[n + 1:]
+                            for j in short_line:
+                                if j.isalnum() or j == "_":
+                                    param += j
+                                elif j == ",":
+                                    sorted_lines = operator_deletion(param, sorted_lines)
+                                    param = ""
+                                elif j == ")":
+                                    sorted_lines = operator_deletion(param, sorted_lines)
+                                    break
 
     for l in range(len(sorted_lines)):
         line = sorted_lines[l]

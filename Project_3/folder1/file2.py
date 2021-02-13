@@ -29,29 +29,29 @@ def hhd(file, num):
     return ar
 
 
-# ar1 = hhd(file_1, 1)
-# ar2 = hhd(file_2, 1)
-#
-# x = Counter(ar1)
-# y = Counter(ar2)
-# print(x)
-# print(y)
-#
-# if x == y:
-#     print("HU")
-#
-# t = 0
-# for keyx in x:
-#     for keyy in y:
-#         if keyx == keyy:
-#             if x[keyx] <= y[keyy]:
-#                 t += x[keyx] / y[keyy]
-#             if x[keyx] > y[keyy]:
-#                 t += y[keyy] / x[keyx]
-# q = 0
-# if len(x) < len(y):
-#     q = len(y)
-# else:
-#     q = len(x)
-#
-# print(t / q)
+ar1 = hhd(file_1, 1)
+ar2 = hhd(file_2, 1)
+
+x = Counter(ar1)
+y = Counter(ar2)
+print(x)
+print(y)
+
+if x == y:
+    print("HU")
+
+t = 0
+for keyx in x:
+    for keyy in y:
+        if keyx == keyy:
+            if x[keyx] <= y[keyy]:
+                t += x[keyx] / y[keyy]
+            if x[keyx] > y[keyy]:
+                t += y[keyy] / x[keyx]
+q = 0
+if len(x) < len(y):
+    q = len(y)
+else:
+    q = len(x)
+
+print(t / q)
