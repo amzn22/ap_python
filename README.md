@@ -18,5 +18,4 @@
 
 ### Запуск проекта:
 
-Проект запускается через консоль с помощью команды python start.py project_1 project_2
-Где project_1 и project_2 - это пути к проектам
+Проект запускается через консоль с помощью команды python start.py project_1 project_2 (где project_1 и project_2 - это пути к проектам)
