@@ -46,6 +46,7 @@ def start_methods():
         print()
         print()
         print(f"Общий процент плагиата между проетами {project_1} и {project_2}: {main_result} %")
+        return main_result
 
 
 def start_lib():
@@ -84,6 +85,7 @@ def start_lib():
         plagiarism = len(plagiarised_files) / min(len(projects_files[project1]), len(projects_files[project2]))
         if plagiarism > 0.7:
             print(f'НАЙДЕН ПЛАГИАТ. Проекты "{project1}" и "{project2}" схожи на {plagiarism * 100}%!')
+            return plagiarism * 100
 
 
 

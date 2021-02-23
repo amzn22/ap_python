@@ -1,7 +1,7 @@
 from collections import Counter
 
 file_1 = "aaa.pfile_1  lalalalalala lll23flf; 23'' dd/ dwd32wd[] dwdwdwd{2323@} : dwddwdd"
-file_2 = "lalalalalala lll23flf; 23'' dd/ dwd32wd[]"
+file_2 = "аа lll23flf; 23'' dd/ dwd32wd[]"
 
 ffg = open('aaa.py')
 points = ffg.read().splitlines()
