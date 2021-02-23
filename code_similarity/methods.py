@@ -1,9 +1,14 @@
+
+
+# Метод поиска всех переменных, методов и т.п. с определенным названием и их переименование в единое OPR.
 def operator_deletion(operator, sorted_lines):
+    # Удаления из переменной всех символов, кроме букв, цифр и нижнего подчеркивания.
     sorted_operator = ""
     for i in range(len(operator)):
         if operator[i].isalnum() or operator[i] == '_':
             sorted_operator += operator[i]
 
+    # Изменение названия переменной во всех строках кода.
     for i in range(len(sorted_lines)):
         line = sorted_lines[i]
         u = 0
@@ -27,11 +32,14 @@ def operator_deletion(operator, sorted_lines):
     return sorted_lines
 
 
+# Сортировка файла. Игнорирование всех переменных, методов и т.п. Удаление всех пробелов и переносов строк.
 def file_sorting(file_name):
+    # Чтение файла
     file = open(file_name)
     lines = file.read().splitlines()
     file.close()
 
+    # Удаление всех пустых строк и пробелов в начале строк.
     new_lines = []
     for line in lines:
         if line == '':
@@ -45,6 +53,7 @@ def file_sorting(file_name):
 
     sorted_lines = new_lines
 
+    # Поиск всех переменных, методов и т.п. и их игнорирование с помощью метода operator_deletion.
     for line in new_lines:
         for i in range(len(line)):
             if i <= len(line) - 1:
@@ -78,11 +87,13 @@ def file_sorting(file_name):
                                     sorted_lines = operator_deletion(param, sorted_lines)
                                     break
 
+    # Удаление всех пробелов между словами.
     for l in range(len(sorted_lines)):
         line = sorted_lines[l]
         line = line.replace(" ", "")
         sorted_lines[l] = line
 
+    # Удаление всех комментариев.
     for l in range(len(sorted_lines)):
         line = sorted_lines[l]
         n = line.find("#")
@@ -99,6 +110,7 @@ def file_sorting(file_name):
     return new_sorted_lines
 
 
+# Подсчет плагиата.
 def counting(sorted_file_1, sorted_file_2):
     k = 0
     file_1 = sorted_file_1.copy()
@@ -117,17 +129,3 @@ def counting(sorted_file_1, sorted_file_2):
         q = len(sorted_file_1)
 
     return k / q
-
-# EXAMPLE
-# file = open("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py")
-# lines = file.read().splitlines()
-# file.close()
-# for i in lines:
-#     print(i)
-#
-# print()
-# print()
-# print()
-#
-# for j in file_sorting("C:\\Users\\amirx\Desktop\GitHub\\ap_python\\Projects\\Project_3\\v1.py"):
-#     print(j)

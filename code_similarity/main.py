@@ -13,7 +13,7 @@ def start_methods():
         project_files = {}
         for path, dirs, files in os.walk(project):
             for file in files:
-                absolute_path = f'{path}/{file}'
+                absolute_path = os.path.join(path, file)
                 if 'venv' not in absolute_path and absolute_path.endswith('.py'):
                     project_files[absolute_path[len(project):]] = absolute_path
         print(f'Кол-во файлов: {len(project_files)}')
@@ -56,7 +56,7 @@ def start_lib():
         project_files = {}
         for path, dirs, files in os.walk(project):
             for file in files:
-                absolute_path = f'{path}/{file}'
+                absolute_path = os.path.join(path, file)
                 if 'venv' not in absolute_path and absolute_path.endswith('.py'):
                     fs = open(absolute_path)
                     project_files[absolute_path.removeprefix(project)] = fs.read()
